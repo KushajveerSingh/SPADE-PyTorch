@@ -28,7 +28,9 @@ class SPADE(Module):
 
         seg = interpolate(seg, size=(H,W), mode='nearest')
         seg = relu(self.conv(seg))
+        seg_gamma = self.conv_gamma(seg)
+        seg_beta = self.conv_beta(seg)
 
-        x = torch.matmul(self.conv_gamme(seg), x) + self.conv_beta(seg)
+        x = torch.matmul(seg_gamma, x) + seg_beta
 
         return x
