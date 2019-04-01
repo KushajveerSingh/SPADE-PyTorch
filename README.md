@@ -1,6 +1,6 @@
 __Note:- Work in Progress__
 
-# Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)
+# Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE) [PyTorch]
 PyTorch unofficial implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization paper by Nvidia Research.
 
 ### [project page](https://nvlabs.github.io/SPADE/) |   [paper](https://arxiv.org/abs/1903.07291) | [GTC 2019 demo](https://youtu.be/p5U4NgVGAwg) | [Youtube](https://youtu.be/MXWm6w4E5q0)
