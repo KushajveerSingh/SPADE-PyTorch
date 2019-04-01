@@ -30,7 +30,7 @@ class SPADEResBlk(Module):
         x = self.conv2(x)
 
         if self.skip:
-            x_skip = relu(self.spade_skip(x_skip))
+            x_skip = relu(self.spade_skip(x_skip, seg))
             x_skip = self.conv_skip(x_skip)
         
         return x_skip + x

@@ -5,13 +5,13 @@ from torch.nn.utils import spectral_norm
 
 def custom_model1(in_chan, out_chan):
     return nn.Sequential(
-        spectral_norm(nn.Conv2d(in_chan, out_chan, kernel_size=(4,4), stride=2, padding=1, bias=False)),
+        spectral_norm(nn.Conv2d(in_chan, out_chan, kernel_size=(4,4), stride=2, padding=1)),
         nn.LeakyReLU(inplace=True)
     )
 
 def custom_model2(in_chan, out_chan, stride=2):
     return nn.Sequential(
-        spectral_norm(nn.Conv2d(in_chan, out_chan, kernel_size=(4,4), stride=stride, padding=1, bias=False)),
+        spectral_norm(nn.Conv2d(in_chan, out_chan, kernel_size=(4,4), stride=stride, padding=1)),
         nn.InstanceNorm2d(out_chan),
         nn.LeakyReLU(inplace=True)
     )
