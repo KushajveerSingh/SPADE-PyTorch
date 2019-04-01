@@ -46,7 +46,7 @@ class CityScapesDataset(Dataset):
                  root, 
                  split='train', 
                  is_transform=False,
-                 img_size=(256, 256),
+                 img_size=(128, 128),
                  img_norm=True,
                  test_mode=False):
         self.root = root

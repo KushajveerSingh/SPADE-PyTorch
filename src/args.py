@@ -11,7 +11,7 @@ def get_parser():
 
     # SPADE ResBlk
     # You can add flags here depending on you want to do addition, concatenation of the ouputs
-    parser.add_argument('spade-resblk-kernel', dest='spade_resblk_kernel', default=3, type=int,
+    parser.add_argument('--spade-resblk-kernel', dest='spade_resblk_kernel', default=3, type=int,
                         help='The kernel size to be used for the conv layers in SPADE ResBlk')
 
     # SPADE Generator
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser = get_parser()
     args = parser.parse_args()
 
-    if args.hidden_size%16 != 0:
+    if args.gen_hidden_size%16 != 0:
         print('hidden-size should be multiple of 16. It is based on paper where first input', end=" ") 
         print('to SPADE is (4,4) in height and width. You can change this defualt in args.py')
         exit()
