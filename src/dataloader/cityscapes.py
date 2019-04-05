@@ -46,7 +46,7 @@ class CityScapesDataset(Dataset):
                  root, 
                  split='train', 
                  is_transform=False,
-                 img_size=(64, 64),
+                 img_size=(256, 256),
                  img_norm=True,
                  test_mode=False):
         self.root = root
@@ -183,8 +183,8 @@ class CityScapesDataset(Dataset):
         lbl = cv2.resize(lbl, (self.img_size[0], self.img_size[1]), interpolation=cv2.INTER_NEAREST)
         lbl = lbl.astype(int)
 
-        if not np.all(classes == np.unique(lbl)):
-            print("WARN: resizing labels yielded fewer classes")
+        # if not np.all(classes == np.unique(lbl)):
+        #     print("WARN: resizing labels yielded fewer classes")
 
         if not np.all(np.unique(lbl[lbl != self.ignore_index]) < self.n_classes):
             print("after det", classes, np.unique(lbl))

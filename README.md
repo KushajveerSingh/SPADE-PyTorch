@@ -1,11 +1,9 @@
-__Note:- Work in Progress__
-
-# Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)
+# Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE) in PyTorch
 PyTorch unofficial implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization paper by Nvidia Research.
 
 ### [project page](https://nvlabs.github.io/SPADE/) |   [paper](https://arxiv.org/abs/1903.07291) | [GTC 2019 demo](https://youtu.be/p5U4NgVGAwg) | [Youtube](https://youtu.be/MXWm6w4E5q0)
 
-## Overview
+# Overview
 
 <img src="https://nvlabs.github.io/SPADE/images/method.png" width="97%">
 
@@ -16,30 +14,51 @@ All the code for the repo can be found in the src-folder.
 
 ```python
 └── src
-    ├── args.py
     ├── dataloader
     │   ├── cityscapes.py
     ├── models
+    │   ├── spade.py
+    │   ├── spade_resblk.py
+    │   ├── generator.py
     │   ├── discriminator.py
     │   ├── encoder.py
-    │   ├── generator.py
-    │   ├── spade.py
-    │   └── spade_resblk.py
-    └── notebooks
-        ├── develpment.ipynb
-        └── train_model.ipynb
+    │   ├── ganloss.py
+    │   └── weights_init.py
+    ├── notebooks
+    │   ├── develpment.ipynb
+    │   ├── dis.pth
+    │   ├── gen.pth
+    │   ├── Images
+    │   └── train_model.ipynb
+    ├── args.py
+    ├── plot.py
+    └── train.py
+
 ```
+* In `args.py` you will find the get_parser and you can set various defaults here.
+* In `train.py` I provide the train script to train your model. (I recommend using train_model.ipynb notebook for training your model, as I present complete model training process there)
+* In `plot.py` you will find various plotting functions, which are used in the notebooks also.
+* In `models` folder there are model definitions of all the models discussed in the paper. They are built so as to resemble the paper architectures.
+* In `notebooks` folder, there are two notebooks, `development.ipynb` which I used when debugging my model architectures. And in `train_model.ipynb` I make an actually model from scratch and train it, so if you want to make your own model, follow this notebook.
 
-models folder contains the model definitions for all the models discussed in the paper (spade, spade_resblk, generator, encoder, discriminator). The models are built to resemble that discussed in the paper. The source code is easy to read and modify.
+# Results
+Comparison of original model and my model
 
-dataloader folder contains the dataloader for cityscapes dataset. The code has been copied from [pytorch-segmap](https://github.com/meetshah1995/pytorch-semseg/tree/master/ptsemseg/loader). pytorch0-segmap contains dataloaders for various segmentation tasks. Although, the code is bit old but some tweaks and quick google serach can get you up with the deprecated functions.
+<img src='benchmark.png'>
 
-notebooks folder contains two notebooks.
-* development -> It was the one I used when I started working on the project. I used this notebook for model development. Do not follow this notebook right now, as the models are wrong in it (for the correct implementation use the .py scripts in `models` folder). I will update the notebook with comments and correct model implementaions.
-* train_model -> I have 4GB gpu, so I use this notebook to create complete SPADE model with modified generator and discriminator. Also, I reduce the filter size in `spade` block to 64. I am working on this notebook right now and the training process, would be documneted in this. But if you want to make SPADE model, then it provides a quick tutorial on how to use the repo.
+I was limited by my hardware so I changed my motive to being able to reproduce images that show that the model works. (Note:- I did not train my model completely, below are results after every 20 epochs)
 
-## Next things to do
-1. Complete the train script, with loss definitions from the pix2pixhd paper
-2. Train for some epochs on CityScapes dataset.
-3. Update README with the results
-4. Blog in progress.
+<img src='results.png'>
+
+After 80 epochs, we can get a sense that we are able to get real life pictures. Also, after downsampling the original CityScape images, they were blurry themselves so some bluriness in the output is expected (By bluriness I am saying we have to print pictures very small to show without being blurred).
+
+## TODO
+* Comment notebook
+* Comment scrits
+* Complete blog post
+
+# Issues
+If some documentation is missing or some piece of code is not clear, open an issue and I would be happy to clarify. Also, if any bug is found, file a PR or open an issue. If you want some genral discussion, I am always open to discussion.
+
+# License
+This repo is MIT licensed, as found in the LICENSE file.
