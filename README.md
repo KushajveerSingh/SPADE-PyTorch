@@ -1,5 +1,12 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-ade20k-labels)](https://paperswithcode.com/sota/image-to-image-translation-on-ade20k-labels?p=semantic-image-synthesis-with-spatially)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-ade20k-outdoor)](https://paperswithcode.com/sota/image-to-image-translation-on-ade20k-outdoor?p=semantic-image-synthesis-with-spatially)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-cityscapes)](https://paperswithcode.com/sota/image-to-image-translation-on-cityscapes?p=semantic-image-synthesis-with-spatially)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-coco-stuff)](https://paperswithcode.com/sota/image-to-image-translation-on-coco-stuff?p=semantic-image-synthesis-with-spatially)
+
 # Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE) in PyTorch
 PyTorch unofficial implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization paper by Nvidia Research.
+
+My blog post can be found here, [SPADE: State of the art in Image-to-Image Translation by Nvidia](https://medium.com/@kushajreal/spade-state-of-the-art-in-image-to-image-translation-by-nvidia-bb49f2db2ce3)
 
 ### [project page](https://nvlabs.github.io/SPADE/) |   [paper](https://arxiv.org/abs/1903.07291) | [GTC 2019 demo](https://youtu.be/p5U4NgVGAwg) | [Youtube](https://youtu.be/MXWm6w4E5q0)
 
@@ -39,7 +46,7 @@ All the code for the repo can be found in the src-folder.
 * In `train.py` I provide the train script to train your model. (I recommend using train_model.ipynb notebook for training your model, as I present complete model training process there)
 * In `plot.py` you will find various plotting functions, which are used in the notebooks also.
 * In `models` folder there are model definitions of all the models discussed in the paper. They are built so as to resemble the paper architectures.
-* In `notebooks` folder, there are two notebooks, `development.ipynb` which I used when debugging my model architectures. And in `train_model.ipynb` I make an actually model from scratch and train it, so if you want to make your own model, follow this notebook.
+* In `notebooks` folder, there are two notebooks, `development.ipynb` which I used when debugging my model architectures. And in `train_model.ipynb` I make an actual model from scratch and train it, so if you want to make your own model, follow this notebook.
 
 # Results
 Comparison of original model and my model
@@ -51,11 +58,6 @@ I was limited by my hardware so I changed my motive to being able to reproduce i
 <img src='results.png'>
 
 After 80 epochs, we can get a sense that we are able to get real life pictures. Also, after downsampling the original CityScape images, they were blurry themselves so some bluriness in the output is expected (By bluriness I am saying we have to print pictures very small to show without being blurred).
-
-## TODO
-* Comment notebook
-* Comment scrits
-* Complete blog post
 
 # Issues
 If some documentation is missing or some piece of code is not clear, open an issue and I would be happy to clarify. Also, if any bug is found, file a PR or open an issue. If you want some genral discussion, I am always open to discussion.
