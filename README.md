@@ -59,6 +59,11 @@ I was limited by my hardware so I changed my motive to being able to reproduce i
 
 After 80 epochs, we can get a sense that we are able to get real life pictures. Also, after downsampling the original CityScape images, they were blurry themselves so some bluriness in the output is expected (By bluriness I am saying we have to print pictures very small to show without being blurred).
 
+# Requirements
+* Python 3.7+
+* PyTorch 1.1+
+* cv2
+
 # Issues
 If some documentation is missing or some piece of code is not clear, open an issue and I would be happy to clarify. Also, if any bug is found, file a PR or open an issue. If you want some genral discussion, I am always open to discussion.
 
