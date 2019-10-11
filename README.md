@@ -1,8 +1,3 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-ade20k-labels)](https://paperswithcode.com/sota/image-to-image-translation-on-ade20k-labels?p=semantic-image-synthesis-with-spatially)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-ade20k-outdoor)](https://paperswithcode.com/sota/image-to-image-translation-on-ade20k-outdoor?p=semantic-image-synthesis-with-spatially)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-cityscapes)](https://paperswithcode.com/sota/image-to-image-translation-on-cityscapes?p=semantic-image-synthesis-with-spatially)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/semantic-image-synthesis-with-spatially/image-to-image-translation-on-coco-stuff)](https://paperswithcode.com/sota/image-to-image-translation-on-coco-stuff?p=semantic-image-synthesis-with-spatially)
-
 # Implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE) in PyTorch
 PyTorch unofficial implementation of Semantic Image Synthesis with Spatially-Adaptive Normalization paper by Nvidia Research.
 
